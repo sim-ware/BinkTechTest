@@ -40,8 +40,11 @@ describe Search do
 
   describe '#return_search'do
     it 'uses the filter and returns a Data Object for Images from Pixabay' do
+      subject.colour_selector("Blue")
+      subject.noun = "Bird"
       subject.make_filter
-      expect(subject.noun).not_to eq ''
+      subject.return_search
+      expect(subject.res['hits'][0]['pageURL']).to eq "https://pixabay.com/en/bird-animal-blue-fly-548654/"
     end
   end
 
