@@ -18,7 +18,7 @@ describe Search do
   end
 
   describe '#colour_selector'do
-    it 'Adds a Colour to the Search Object' do
+    it 'adds a Colour to the Search Object' do
       subject.colour_selector('Blue')
       expect(subject.colour).to eq 'Blue'
     end
