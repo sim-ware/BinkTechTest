@@ -5,3 +5,4 @@ gem "rspec"
 gem "sinatra"
 gem "capybara"
 gem "pry"
+gem 'pixabay-api', require: 'pixabay'

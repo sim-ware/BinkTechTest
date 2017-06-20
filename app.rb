@@ -9,6 +9,7 @@ post '/colour' do
   @search = Search.new
   @search.random_noun
   @search.colour_selector(params[:colour])
-  puts @search.noun, @search.colour
+  @search.return_search
+  puts @search.noun, @search.colour, @search.res
   erb :noun
 end
