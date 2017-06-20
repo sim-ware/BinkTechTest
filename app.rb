@@ -10,6 +10,6 @@ post '/colour' do
   @search.random_noun
   @search.colour_selector(params[:colour])
   @search.return_search
-  puts @search.noun, @search.colour, @search.res
+  puts @search.noun, @search.colour, @search.res['hits'][0]['previewURL']
   erb :noun
 end

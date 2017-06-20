@@ -19,7 +19,7 @@ class Search
 
   def return_search
     client = Pixabay.new
-    @res = client.photos(key: "5688185-b1f3ff430d3073bfeea12608a", q: "Blue Bird", safesearch: true, page: 1, per_page: 30)
+    @res = client.photos(key: "5688185-b1f3ff430d3073bfeea12608a", q: "Blue Bird", safesearch: true, page: 1, per_page: 3)
   end
 
 end
