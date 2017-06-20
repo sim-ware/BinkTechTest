@@ -1,11 +1,12 @@
 require 'pixabay'
 
 class Search
-  attr_accessor :colour, :noun, :res
+  attr_accessor :colour, :noun, :filter, :res
 
   def initialize
     @colour = ''
     @noun = ''
+    @filter = ''
     @res = {}
   end
 
@@ -27,11 +28,3 @@ class Search
   end
 
 end
-
-#
-# require 'pixabay'
-# client = Pixabay.new
-# res = client.photos(q: "yellow flower", safesearch: true, page: 1, per_page: 30)
-# res["total"] # 15526
-# res["totalHits"] # 500
-# res["hits"] # pictures
