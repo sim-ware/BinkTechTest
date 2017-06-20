@@ -8,7 +8,41 @@
 </style>
 <body>
 
-<div class="w3-container">
+  <form action="/colour" method="post">
+    <div class="w3-container">
+      <h2>Select a Colour...</h2>
+      <input type="button" class="w3-button w3-cyan w3-hover-indigo"       value="Blue">
+      <input type="button" class="w3-button w3-light-green w3-hover-green" value="Green">
+      <input type="button" class="w3-orange w3-hover-deep-orange"          value="Orange">
+      <input type="button" class="w3-pink w3-hover-pale-red"               value="Pink">
+      <input type="button" class="w3-purple w3-hover-deep-purple"          value="Purple">
+      <input type="button" class="w3-red w3-hover-pale-red"                value="Red">
+      <input type="button" class="w3-amber w3-hover-yellow"                value="Yellow">
+    </div>
+  </form>
+
+  <div class="btn-group" data-toggle="buttons">
+  <label class="btn btn-primary active">
+    <input type="radio" name="options" id="option1" checked> Apple
+  </label>
+  <label class="btn btn-primary">
+    <input type="radio" name="options" id="option2"> Samsung
+  </label>
+  <label class="btn btn-primary">
+    <input type="radio" name="options" id="option3"> Sony
+  </label>
+</div>
+
+<form action="/colour" method="post">
+Choose your favorite colour:
+<button name="colour" type="submit" value="blue">Blue</button>
+<button name="colour" type="submit" value="green">Green</button>
+</form>
+
+</body>
+</html>
+
+<!-- <div class="w3-container">
   <h2>Select a Colour...</h2>
   <p><button class="w3-button w3-cyan w3-hover-indigo">Blue</button></p>
   <p><button class="w3-button w3-light-green w3-hover-green">Green</button></p>
@@ -19,5 +53,27 @@
   <p><button class="w3-button w3-amber w3-hover-yellow">Yellow</button></p>
 </div>
 
-</body>
-</html>
+<div class="w3-container">
+  <h2>Select a Colour...</h2>
+  <input type="button" class="w3-button w3-cyan w3-hover-indigo" value="Input Button">
+  <input type="button" class="w3-button w3-black" value="Input Button">
+  <input type="button" class="w3-button w3-black" value="Input Button">
+  <input type="button" class="w3-button w3-black" value="Input Button">
+  <input type="button" class="w3-button w3-black" value="Input Button">
+  <input type="button" class="w3-button w3-black" value="Input Button">
+  <input type="button" class="w3-button w3-black" value="Input Button">
+</div>
+
+
+<form action="/colour" method="post">
+  <div class="">
+    <label for="colour">Colour</label>
+    <input type="text" name="colour" value="">
+  </div>
+
+  <div class="">
+    <input id="submit_colour" type="submit" name="submit_colour" value="Submit Colour">
+  </div>
+
+
+</form> -->
