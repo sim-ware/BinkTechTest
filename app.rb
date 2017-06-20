@@ -6,11 +6,9 @@ get '/' do
 end
 
 post '/colour' do
-  # @colour = params[:colour]
-  # @noun = ['Airline', 'Bird', 'Book', 'Building', 'Cat', 'Country', 'Fear', 'Happiness', 'Man', 'Mountain', 'Ocean', 'Phone', 'Pride', 'Religion', 'Rice', 'Snow', 'State', 'Water', 'Wealth'].sample
-  @serje = Search.new
-  @serje.random_noun
-  @serje.colour_selector(params[:colour])
-  puts @serje.noun, @serje.colour
+  @search = Search.new
+  @search.random_noun
+  @search.colour_selector(params[:colour])
+  puts @search.noun, @search.colour
   erb :noun
 end
