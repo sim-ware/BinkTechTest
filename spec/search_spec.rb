@@ -12,6 +12,8 @@ describe Search do
     it "has a default empty attributes" do
       expect(subject.colour).to eq('')
       expect(subject.noun).to eq('')
+      expect(subject.filter).to eq('')
+      expect(subject.res).to eq({})
     end
   end
 
