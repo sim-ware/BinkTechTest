@@ -131,3 +131,18 @@ an example of how I tried to solve the final User Stories at the Model Level.
  @http_response=281.24100000000004,
  @noun="Mountain",
  @res= {...a very long hash of image search results and details...}
+ ```
+ - 'd', as an array has the 'a' Search Object stored in its Zeroth position. We can see it's filter, http_response time,
+ and other details too. I have tried to collect the most important info (i.e. those requested by the final User Stories)
+ and put it into a more usable 'compact'ed array. These return more accessible arrays which I had hoped would make the issue
+ of moving this information to the views a bit easier.
+
+ ```
+> d.logs[0].compact
+=> [2017-06-21 09:10:48 +0100, "Mountain", "Red", 281.24100000000004]
+> d.logs[1].compact
+=> [2017-06-21 09:10:48 +0100, "Bird", "Blue", 275.855]
+> d.logs[2].compact
+=> [2017-06-21 09:10:48 +0100, "Religion", "Yellow", 256.012]
+ ```
+ - the Array Items are; Date&Time of Search || Noun || Colour || Http response in ms
