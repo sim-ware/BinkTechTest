@@ -2,9 +2,11 @@ require './lib/search'
 require './lib/searchlog'
 
 a = Search.new
-a.random_noun
-a.colour_selector("Blue")
+a.colour_selector("Red")
+a.noun = 'Mountain'
 a.make_filter
+a.return_search
+a.compact_info
 
 b = Search.new
 b.colour_selector("Blue")
@@ -13,15 +15,15 @@ b.make_filter
 b.return_search
 b.compact_info
 
-d = Search.new
-d.colour_selector("Yellow")
-d.noun = 'Religion'
-d.make_filter
-d.return_search
-d.compact_info
+c = Search.new
+c.colour_selector("Yellow")
+c.noun = 'Religion'
+c.make_filter
+c.return_search
+c.compact_info
 
-c = Searchlog.new
+d = Searchlog.new
 
-c.add_search(a)
-c.add_search(b)
-c.add_search(d)
+d.add_search(a)
+d.add_search(b)
+d.add_search(c)

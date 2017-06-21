@@ -65,26 +65,61 @@ Enter the following commands in your terminal to download the program:
 - run 'ruby app.rb' and visit 'localhost:4567' to visit
 
 ## Usage
-- Type the command `pry` in your terminal to run the example tests provided in .pryrc
-- Alternatively, open `irb` and enter the following commands:
+- Select a colour, and then see your search results, alongside your chosen colour and randomised noun!
+
+## Struggles
+
+- I was unable to complete the final 3 User Stories as I ran out of time. If I did this Again I would factor in the storing
+of a search history into my design. Persistence turned out to be an issue I didn't predict, which stole many precious hours
+from me. I think I would use a database next time, as I feel comfortable and confident in managing persistence with them. I
+looked into using cookies, another method to consider as data persists within the browsing session, which would have perfectly
+suited the challenge.
+- I struggled with the routing concerns in my 'app.rb' file, finding it difficult to get objects to persist between routes.
+I think I managed to make the beginnings of a usable back-end solution, as I could store the required Search Details as
+individual arrays in a Searchlog object. The '.pryc' file contains several Search objects, and a Searchlog object, and provides
+an example of how I tried to solve the final User Stories at the Model Level.
+
+### REPL Use
+
+- if you run 'pry' in the project directory, several objects are pre-instantiated.
 
 ```
-> o = Order.new
- => #<Order:0x007fe70d10f288 @clock="", @standard_del=[], @express_del=[], @price=0, @discount_price=0>
-
-> o.clock_number('WNP/SWCL001/010')
- => "WNP/SWCL001/010"
-
->o.standard_delivery_companies('Disney', 'Discovery', 'Viacom')
- => ["Disney", "Discovery", "Viacom"]
-
-> o.express_delivery_companies('Horse & County')
- => ["Horse & County"]
-> o
-
- => #<Order:0x007fe70d10f288 @clock="WNP/SWCL001/010", @standard_del=["Disney", "Discovery", "Viacom"], @express_del=["Horse & County"], @price=0, @discount_price=0>  
+> a = Search.new
+> a.colour_selector("Red")
+> a.noun = 'Mountain'
+> a.make_filter
+> a.return_search
+> a.compact_info
 ```
-- 'o' is an Order with the clock id 'WNP/SWCL001/010', the companies "Disney", "Discovery", "Viacom" for Standard Delivery, and the companies "Horse & County" for Express Delivery.
+- 'a' is a Search Object made with the filter 'Red Mountain'
+
+```
+> b = Search.new
+> b.colour_selector("Blue")
+> b.noun = 'Bird'
+> b.make_filter
+> b.return_search
+> b.compact_info
+```
+- 'b' is a Search Object made with the filter 'Blue Bird'
+
+```
+> c = Search.new
+> c.colour_selector("Yellow")
+> c.noun = 'Religion'
+> c.make_filter
+> c.return_search
+> c.compact_info
+```
+- 'c' is a Search Object made with the filter 'Yellow Religion'
+
+```
+> d = Searchlog.new
+> d.add_search(a)
+> d.add_search(b)
+> d.add_search(c)
+```
+- 'a' is a Search Object made with the filter 'Yellow Religion'
 
 ```
 > p = Pricer.new
@@ -105,3 +140,30 @@ Enter the following commands in your terminal to download the program:
  => 45.0  
 ```
 - 'd' is a Discounter Object that has a method per Discount. It runs the first Promotion and sees if it can discount the price (in this case not). It then applies the second Promotion, and the price is discounted from 50, to 45.
+
+a = Search.new
+a.colour_selector("Red")
+a.noun = 'Mountain'
+a.make_filter
+a.return_search
+a.compact_info
+
+b = Search.new
+b.colour_selector("Blue")
+b.noun = 'Bird'
+b.make_filter
+b.return_search
+b.compact_info
+
+c = Search.new
+c.colour_selector("Yellow")
+c.noun = 'Religion'
+c.make_filter
+c.return_search
+c.compact_info
+
+d = Searchlog.new
+
+d.add_search(a)
+d.add_search(b)
+d.add_search(c)
