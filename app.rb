@@ -1,16 +1,27 @@
 require 'sinatra'
 require './lib/search'
+require './lib/searchlog'
 
 get '/' do
   erb :index
 end
 
+before do
+   @search = Search.new
+   @search.random_noun
+   @search_log = Search.new
+end
+
 post '/colour' do
-  @search = Search.new
-  @search.random_noun
   @search.colour_selector(params[:colour])
   @search.make_filter
   @search.return_search
-  puts @search.noun, @search.colour, @search.res['hits'][0]['previewURL']
+  # @search_log.add_search(@search)
+  puts @search_log, @search.colour
   erb :noun
+end
+
+post '/history' do
+  "Hello World"
+  erb :history
 end

@@ -5,18 +5,27 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
 .w3-button {width:150px;}
+body {background-image: url("http://cdn.wallpapersafari.com/4/2/9Me8DL.png")}
+h2 { color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;}
 </style>
 <body>
 
+<div style="text-align:center;">
 <h2><%="You chose #{@search.colour}."%></h2>
 <h2><%="Your noun is #{@search.noun}."%></h2>
 <a href=<%=@search.res['hits'][0]['webformatURL']%>">
-  <img src=<%=@search.res['hits'][0]['previewURL']%> alt="W3Schools.com" style="width:104px;height:142px;">
+  <img src=<%=@search.res['hits'][0]['previewURL']%> alt="W3Schools.com" style="width:150;height:150px;">
 </a>
-<img src=<%=@search.res['hits'][1]['previewURL']%> alt="W3Schools.com" style="width:104px;height:142px;">
-<img src=<%=@search.res['hits'][2]['previewURL']%> alt="W3Schools.com" style="width:104px;height:142px;">
-<img src=<%=@search.res['hits'][3]['previewURL']%> alt="W3Schools.com" style="width:104px;height:142px;">
-<img src=<%=@search.res['hits'][4]['previewURL']%> alt="W3Schools.com" style="width:104px;height:142px;">
+<img src=<%=@search.res['hits'][1]['previewURL']%> alt="W3Schools.com" style="width:150px;height:150px;">
+<img src=<%=@search.res['hits'][2]['previewURL']%> alt="W3Schools.com" style="width:150px;height:150px;">
+<img src=<%=@search.res['hits'][3]['previewURL']%> alt="W3Schools.com" style="width:150px;height:150px;">
+<img src=<%=@search.res['hits'][4]['previewURL']%> alt="W3Schools.com" style="width:150px;height:150px;">
+
+<form action="/history" method="post">
+<button name="colour" type="submit" value="Blue">See History</button>
+</form>
+<div>
 
 </body>
 </html>

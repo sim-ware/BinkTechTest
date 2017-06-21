@@ -1,4 +1,5 @@
 require 'pixabay'
+require_relative 'searchlog'
 
 class Search
   attr_accessor :colour, :noun, :filter, :res

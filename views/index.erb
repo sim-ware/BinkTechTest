@@ -4,20 +4,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
-.w3-button {width:150px;}
+.w3-button {width:150px; height:150px}
+body {background-image: url("http://cdn.wallpapersafari.com/4/2/9Me8DL.png")}
+h2 { color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;}
 </style>
 <body>
 
+<div style="text-align:center;">
 <form action="/colour" method="post">
 <h2>Select a Colour...</h2>
-<button name="colour" type="submit" value="Blue">Blue</button>
-<button name="colour" type="submit" value="Green">Green</button>
-<button name="colour" type="submit" value="Orange">Orange</button>
-<button name="colour" type="submit" value="Pink">Pink</button>
-<button name="colour" type="submit" value="Purple">Purple</button>
-<button name="colour" type="submit" value="Red">Red</button>
-<button name="colour" type="submit" value="Yellow">Yellow</button>
+<button class="w3-button w3-cyan w3-hover-indigo" name="colour" type="submit" value="Blue">Blue</button>
+<button class="w3-button w3-light-green w3-hover-green" name="colour" type="submit" value="Green">Green</button>
+<button class="w3-button w3-orange w3-hover-deep-orange" name="colour" type="submit" value="Orange">Orange</button>
+<button class="w3-button w3-pink w3-hover-pale-red" name="colour" type="submit" value="Pink">Pink</button>
+<button class="w3-button w3-purple w3-hover-deep-purple" name="colour" type="submit" value="Purple">Purple</button>
+<button class="w3-button w3-red w3-hover-pale-red" name="colour" type="submit" value="Red">Red</button>
+<button class="w3-button w3-amber w3-hover-yellow" name="colour" type="submit" value="Yellow">Yellow</button>
 </form>
+</div>
 
 </body>
 </html>
