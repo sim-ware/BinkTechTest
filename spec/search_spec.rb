@@ -50,4 +50,14 @@ describe Search do
     end
   end
 
+  describe '#time'do
+    it 'returns the HTTP Response Time in Ms' do
+      subject.colour_selector("Blue")
+      subject.noun = "Bird"
+      subject.make_filter
+      subject.return_search
+      expect(subject.time).to be_a(Time)
+    end
+  end
+
 end

@@ -9,7 +9,7 @@ end
 before do
    @search = Search.new
    @search.random_noun
-   @search_log = Search.new
+   # @search_log = Search.new
 end
 
 post '/colour' do
@@ -17,8 +17,8 @@ post '/colour' do
   @search.make_filter
   @search.return_search
   # @search_log.add_search(@search)
-  puts @search_log, @search.colour
-  erb :noun
+  # @search_log.logs << @search
+  erb :results
 end
 
 post '/history' do

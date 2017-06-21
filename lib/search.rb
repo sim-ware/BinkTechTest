@@ -2,13 +2,16 @@ require 'pixabay'
 require_relative 'searchlog'
 
 class Search
-  attr_accessor :colour, :noun, :filter, :res
+  attr_accessor :colour, :noun, :filter, :res, :date, :time, :http_response
 
   def initialize
     @colour = ''
     @noun = ''
     @filter = ''
     @res = {}
+    @date = 0
+    @time = 0
+    @http_response = 0
   end
 
   def colour_selector(colour)
@@ -25,7 +28,9 @@ class Search
 
   def return_search
     client = Pixabay.new
+    @time = Time.now
     @res = client.photos(key: "5688185-b1f3ff430d3073bfeea12608a", q: "#{@filter}", safesearch: true, page: 1, per_page: 5)
+    @http_response = (Time.now - @time) * 1000.to_i
   end
 
 end

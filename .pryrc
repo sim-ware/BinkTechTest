@@ -13,3 +13,6 @@ b.make_filter
 b.return_search
 
 c = Searchlog.new
+
+c.add_search(a)
+c.add_search(b)
