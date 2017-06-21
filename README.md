@@ -119,51 +119,15 @@ an example of how I tried to solve the final User Stories at the Model Level.
 > d.add_search(b)
 > d.add_search(c)
 ```
-- 'a' is a Search Object made with the filter 'Yellow Religion'
+- 'd' is a Searchlog Object with the previous searches added
 
 ```
-> p = Pricer.new
- => #<Pricer:0x007f903c217d60>
->p.pricing(o)
- => 50
-> o.price
- => 50
-```
-- 'p' is a Pricer Object that calculates the unDiscounted price of the order. In this example, the price is 50.
-
-```
-> d = Discounter.new
- => #<Discounter:0x007f903c1fd0c8 @expr=20>
-> d.discounter_a(o)
- => 50
-> d.discounter_b(o)
- => 45.0  
-```
-- 'd' is a Discounter Object that has a method per Discount. It runs the first Promotion and sees if it can discount the price (in this case not). It then applies the second Promotion, and the price is discounted from 50, to 45.
-
-a = Search.new
-a.colour_selector("Red")
-a.noun = 'Mountain'
-a.make_filter
-a.return_search
-a.compact_info
-
-b = Search.new
-b.colour_selector("Blue")
-b.noun = 'Bird'
-b.make_filter
-b.return_search
-b.compact_info
-
-c = Search.new
-c.colour_selector("Yellow")
-c.noun = 'Religion'
-c.make_filter
-c.return_search
-c.compact_info
-
-d = Searchlog.new
-
-d.add_search(a)
-d.add_search(b)
-d.add_search(c)
+> d.logs[0]
+=> #<Search:0x007ff144198178
+ @colour="Red",
+ @compact=[2017-06-21 09:10:48 +0100, "Mountain", "Red", 281.24100000000004],
+ @date=0,
+ @filter="Red Mountain",
+ @http_response=281.24100000000004,
+ @noun="Mountain",
+ @res= {...a very long hash of image search results and details...}
